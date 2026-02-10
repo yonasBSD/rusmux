@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.8.5] - 2026-02-10
+
+### Documentation
+
+- Added man page
+
+### Features
+
+- Added `r` and `s` shortcuts for `run` and `stop`
+
+### Miscellaneous Tasks
+
+- Updated `dist` version
+
 ## [0.8.4] - 2025-11-04
 
 ### Bug Fixes
