@@ -6,7 +6,7 @@ _rusmux() {
   prev="${COMP_WORDS[COMP_CWORD - 1]}"
 
   commands="run stop debug edit delete new list copy doctor"
-  aliases="start kill ls cp"
+  aliases="start kill ls cp r s"
 
   if [[ "$prev" == "rusmux" ]]; then
     COMPREPLY=($(compgen -W "$commands $aliases" -- "$cur"))
@@ -16,7 +16,7 @@ _rusmux() {
   projects=$(rusmux list 2>/dev/null)
 
   case "$prev" in
-  run | start | stop | kill | debug | edit | delete)
+  run | start | r | s | stop | kill | debug | edit | delete)
     COMPREPLY=($(compgen -W "$projects" -- "$cur"))
     return 0
     ;;

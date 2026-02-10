@@ -3,8 +3,8 @@
 _rusmux() {
   local -a commands
   commands=(
-    'run:Run the project’s commands (alias: start)'
-    'stop:Stop the project’s session (alias: kill)'
+    'run:Run the project’s commands (aliases: start, r)'
+    'stop:Stop the project’s session (aliases: kill, s)'
     'debug:Output shell commands for a project'
     'edit:Edit an existing project'
     'delete:Delete an existing project'
@@ -28,7 +28,7 @@ _rusmux_args() {
   projects=("${(@f)$(rusmux list)}")
 
   case $words[1] in
-    run|start|stop|kill|debug|edit|delete)
+    run|start|r|stop|kill|s|debug|edit|delete)
       _arguments '1:project:(${projects})'
       ;;
     new)

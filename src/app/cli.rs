@@ -1,6 +1,4 @@
 //! CLI arguments parser.
-use clap::command;
-
 #[derive(Debug, Parser)]
 #[command(version, about, arg_required_else_help = true)]
 pub struct Cli {
@@ -11,13 +9,13 @@ pub struct Cli {
 #[derive(Debug, Subcommand)]
 pub enum Commands {
     /// Run the project's commands
-    #[command(visible_alias = "start", arg_required_else_help = true)]
+    #[command(visible_aliases = ["start", "r"], arg_required_else_help = true)]
     Run {
         /// Project name or filesystem path
         project: String,
     },
     /// Stop the project's session
-    #[command(visible_alias = "kill", arg_required_else_help = true)]
+    #[command(visible_aliases = ["kill", "s"], arg_required_else_help = true)]
     Stop {
         /// Project name or filesystem path
         project: String,

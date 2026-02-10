@@ -24,11 +24,11 @@ complete -c rusmux -n __fish_use_subcommand -a cp -d "Alias for copy"
 complete -c rusmux -n __fish_use_subcommand -a doctor -d "Check your environment's configuration"
 
 # Command-specific completions using rusmux list output
-# run/start - requires project argument from rusmux list
-complete -c rusmux -n "__fish_seen_subcommand_from run start" -r -a "(__rusmux_projects)"
+# run/start/r - requires project argument from rusmux list
+complete -c rusmux -n "__fish_seen_subcommand_from run start r" -r -a "(__rusmux_projects)"
 
-# stop/kill - requires project argument from rusmux list
-complete -c rusmux -n "__fish_seen_subcommand_from stop kill" -r -a "(__rusmux_projects)"
+# stop/kill/s - requires project argument from rusmux list
+complete -c rusmux -n "__fish_seen_subcommand_from stop kill s" -r -a "(__rusmux_projects)"
 
 # debug - requires project argument from rusmux list
 complete -c rusmux -n "__fish_seen_subcommand_from debug" -r -a "(__rusmux_projects)"

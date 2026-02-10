@@ -83,6 +83,7 @@ windows:
   ```sh
   rusmux run [project]
   rusmux start [project]
+  rusmux r [project]
   ```
 
   A path to a `yaml` formatted file containing the project definition can be
@@ -116,6 +117,7 @@ windows:
   ```sh
   rusmux stop [project]
   rusmux kill [project]
+  rusmux s [project]
   ```
 
 - Delete an existing project (after confirmation)
