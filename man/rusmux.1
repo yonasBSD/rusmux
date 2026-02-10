@@ -1,0 +1,141 @@
+.TH rusmux "1" "February 10, 2026" "rusmux 1.0.0" "User Commands"
+.SH NAME
+rusmux \- manage your tmux project sessions
+
+.SH SYNOPSIS
+.B rusmux
+.I command
+[arguments]
+
+.SH DESCRIPTION
+.B rusmux
+is a tool designed to manage and automate project session-based tasks with a variety of commands
+for different actions involving project lifecycle management.
+
+Features include:
+.IP
+- Utilize existing `.yaml` project files from tmuxinator.
+.IP
+- A standalone binary for easy distribution.
+.IP
+- Use tmux to manage various project sessions efficiently.
+
+.SH COMMANDS
+.TP
+.B run
+Run the project's commands (aliases: start, r).
+.I Arguments:
+Project name or filesystem path.
+Example:
+.nf
+rusmux run my_project
+rusmux run /path/to/project.yaml
+.fi
+
+.TP
+.B stop
+Stop a project's session (aliases: kill, s).
+.I Arguments:
+Project name or filesystem path.
+Example:
+.nf
+rusmux stop my_project
+.fi
+
+.TP
+.B debug
+Output shell commands for a project.
+.I Arguments:
+Project name or filesystem path.
+Example:
+.nf
+rusmux debug my_project
+.fi
+
+.TP
+.B edit
+Edit an existing project configuration.
+.I Arguments:
+Project name or filesystem path.
+Ensure `$EDITOR` is set in your environment.
+Example:
+.nf
+rusmux edit my_project
+.fi
+
+.TP
+.B delete
+Delete an existing project (confirmation required).
+.I Arguments:
+Project name or filesystem path.
+Example:
+.nf
+rusmux delete my_project
+.fi
+
+.TP
+.B new
+Create a new project.
+.I Arguments:
+Project name or filesystem path.
+Optional Flags:
+\fB--blank\fR Don't use a template for the file.
+Examples:
+.nf
+rusmux new my_project
+rusmux new my_project --blank
+.fi
+
+.TP
+.B list
+List all existing projects in the configuration directory (alias: ls).
+Example:
+.nf
+rusmux list
+.fi
+
+.TP
+.B copy
+Copy an existing project to a new one and edit it.
+.I Arguments:
+Existing project name or filesystem path.
+New project name or filesystem path.
+Example:
+.nf
+rusmux copy old_project new_project
+.fi
+
+.TP
+.B doctor
+Check your environment for potential issues, such as missing dependencies or
+unset variables like `$SHELL` and `$EDITOR`.
+Example:
+.nf
+rusmux doctor
+.fi
+
+.SH EXAMPLES
+.TP
+.B Using a pre-configured project
+To run a project from its name of an existing `.yaml`, use:
+.nf
+rusmux run demo
+.fi
+.TP
+.B Adding shell completions
+To enable shell completions for `bash`:
+.nf
+sudo cp completions/rusmux.bash /usr/share/bash-completion/completions/rusmux
+.fi
+For zsh:
+.nf
+sudo cp completions/rusmux.zsh /usr/share/zsh/site-functions/_rusmux
+.fi
+For fish:
+.nf
+sudo cp completions/rusmux.fish /usr/share/fish/vendor_completions.d/rusmux.fish
+.fi
+
+.SH SEE ALSO
+.tmux", tmuxinator....Similar
+

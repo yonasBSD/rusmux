@@ -19,3 +19,5 @@ pr-run-mode = "plan"
 install-updater = false
 # Path that installers should place binaries in
 install-path = "CARGO_HOME"
+# Include additional files in the dist archive
+include = ["man/"]
